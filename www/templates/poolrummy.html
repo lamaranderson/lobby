@@ -1,0 +1,161 @@
+	<ion-view>
+    <ion-content class="loading">
+    	<div class="menu-backbtn">
+    		<img src="img/lobby/back.png" ng-click="back()">
+    	</div>
+    	<div class="menu-menubtn" >
+    		<img src="img/lobby/menu.png" ui-sref="main">
+    	</div>
+    	<div class="main">
+    		<div class="slide-left1">
+	    		<!--<img src="img/lobby/slider-01.png">-->
+	    		<img src="img/lobby/cash.png">
+	    	</div>
+	    	<div class="slide-left2">
+	    		<!--<img src="img/lobby/slider-01.png">-->
+	    		<img src="img/lobby/pool.png" style="margin-top: 98%;">
+	    	</div>
+	    	<div>
+	    	</div>
+
+	    	<div class="points">
+	    		<div class="points-slider">
+	    			Entry Fee
+	    			  <div class="range-img" style="margin-left:{{volume*3.9}}px;"><label  class="range-val">
+	    			 	{{volume}}</label>
+	    			  </div>
+					  <div class="range range-positive"> 
+					    <input type="range" name="volume" min="0" max="100" ng-model="volume" value="0">
+					  </div>
+					  <!--<div class="range range-positive"> 
+					    <input type="range" name="foo" min="0" max="100" ng-model="volume" value="0">
+					    <output for="foo" onforminput="value = foo.valueAsNumber;" style="background-image: url('../img/lobby/slider-rupee.png');"></output>
+					  </div>-->
+	    		</div>
+	    		<div class="game-type" style="margin-top:-20px">
+	    			<div class="type" ng-init="activeButton='b'">	
+	    				<div>game type</div>
+	    				<div class="ty" >
+	    					<span ng-click="activeButton = 'a'" ng-class="{ 'sele-active': activeButton === 'a' }">101 Pool</span>
+	    					<span ng-click="activeButton = 'b'" ng-class="{ 'sele-active': activeButton === 'b' }">201 Pool</span>
+	    				</div>
+	    			</div>
+	    			<div class="player" ng-init="activeButton1='e'">
+	    				<div>no of player</div>
+	    				<div class="ply">
+	    					<span ng-click="activeButton1 = 'c'" ng-class="{ 'sel-active': activeButton1 === 'c' }">2</span>
+	    					<span ng-click="activeButton1 = 'd'" ng-class="{ 'sel-active': activeButton1=== 'd' }">6</span>
+	    					<span ng-click="activeButton1 = 'e'" ng-class="{ 'sel-active': activeButton1 === 'e' }">all</span>
+	    				</div>
+	    			</div>
+	    		</div>
+	    		
+    			<div class="pool-playnow">
+    				<span class="ply-btn">play now</span>
+    			</div>
+	    		
+	    	</div>
+	    </div>
+
+	     <footer>
+                <div class="footer">
+                    <div class="row">
+                        <div class="col-md-2">
+                           <div class="profile">
+                            <img src="img/lobby/user.png" style="width:60px; padding-left:20px">
+                            <br>
+                            <span style="padding-left:10px">Suraj Sasi</span>
+                            </div></div>
+                        <div class="col-md-3" id="cash">
+                            <div class="row">
+                                <div class="col">
+                                    <img src="img/lobby/rupee.png" style="width:30px"><span>54,896</span>
+                                </div>
+                                <div class="col">
+                                    <img ng-src="img/lobby/add-cash.png" style="width:80px;">
+                                </div>
+                               </div>
+                        </div>
+                        <div class="col-md-2" >
+                               <div class="bonus">
+                                Bonus
+                              <br>
+                                <div class="txt-bonus">
+                                 25467</div>
+                                </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="silver-club">
+                               <div class="row" style="margin-left:45px">
+                                Silver Club</div>
+                                <div class="row" style="margin-left:0px">
+                                <img src="img/lobby/club-silver.png" style="width:150px">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-1">
+                            <div class="notifi">
+                                <img src="img/lobby/notification-icon.png">
+                                <span class="noti-msg">2</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+    </ion-content>
+</ion-view>
+
+<script type="text/javascript">
+	/*$('input[type="range"]').change(function () {
+    var val = ($(this).val() - $(this).attr('min')) / ($(this).attr('max') - $(this).attr('min'));
+    
+    $(this).css('background-image',
+                '-webkit-gradient(linear, left top, right top, '
+                + 'color-stop(' + val + ', #bac1c6), '
+                + 'color-stop(' + val + ', #6f0e0a)'
+                + ')'
+                );
+	});*/
+
+	function modifyOffset() {
+		var el, newPoint, newPlace, offset, siblings, k;
+		width    = this.offsetWidth;
+		newPoint = (this.value - this.getAttribute("min")) / (this.getAttribute("max") - this.getAttribute("min"));
+		offset   = -1;
+		if (newPoint < 0) { newPlace = 0;  }
+		else if (newPoint > 1) { newPlace = width; }
+		else { newPlace = width * newPoint + offset; offset -= newPoint;}
+		siblings = this.parentNode.childNodes;
+		for (var i = 0; i < siblings.length; i++) {
+			sibling = siblings[i];
+			if (sibling.id == this.id) { k = true; }
+			if ((k == true) && (sibling.nodeName == "OUTPUT")) {
+				outputTag = sibling;
+			}
+		}
+		outputTag.style.left       = newPlace + "px";
+		outputTag.style.marginLeft = offset + "%";
+		outputTag.innerHTML        = this.value;
+	}
+
+	function modifyInputs() {
+	    
+		var inputs = document.getElementsByTagName("input");
+		for (var i = 0; i < inputs.length; i++) {
+			if (inputs[i].getAttribute("type") == "range") {
+				inputs[i].onchange = modifyOffset;
+
+				// the following taken from http://stackoverflow.com/questions/2856513/trigger-onchange-event-manually
+				if ("fireEvent" in inputs[i]) {
+				    inputs[i].fireEvent("onchange");
+				} else {
+				    var evt = document.createEvent("HTMLEvents");
+				    evt.initEvent("change", false, true);
+				    inputs[i].dispatchEvent(evt);
+				}
+			}
+		}
+	}
+	modifyInputs();
+
+</script>

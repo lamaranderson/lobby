@@ -1,0 +1,95 @@
+<ion-view>
+    <ion-content class="img-background">
+    	<div class="menu-backbtn">
+    		<img src="img/lobby/back.png" ng-click="back()">
+    	</div>
+    	<div class="menu-menubtn" >
+    		<img src="img/lobby/menu.png" ui-sref="main">
+    	</div>
+    	<div class="main">
+    		<div class="slide-left1">
+	    		<!--<img src="img/lobby/slider-01.png">-->
+	    		<img src="img/lobby/cash.png">
+	    	</div>
+	    	<div class="slide-left2">
+	    		<!--<img src="img/lobby/slider-01.png">-->
+	    		<img src="img/lobby/deal.png">
+	    	</div>
+	    	<div>
+	    	</div>
+
+	    	<div class="points">
+	    		<div class="points-slider">
+	    			Entry Fee
+	    			<div class="range-img" style="margin-left:{{volume*3.9}}px"><label  class="range-val">
+	    			  {{volume}}</label>
+	    			  </div>
+					  <div class="range range-positive"> 
+					    <input type="range" name="volume" min="0" max="100" ng-model="volume" value="0">
+					  </div>
+	    			
+
+	    		</div>
+	    		<div class="no-of-player">
+	    			<span>Game Type</span>
+	    			<div class="no-of" ng-init="activeButton='b'">	
+	    				<div class="nof">
+	    					<span ng-click="activeButton = 'a'" ng-class="{ 'sel-active': activeButton === 'a' }">2 Deal</span>
+	    					<span ng-click="activeButton = 'b'" ng-class="{ 'sel-active': activeButton === 'b' }">3 Deal</span>
+	    					<span ng-click="activeButton = 'c'" ng-class="{ 'sel-active': activeButton === 'c' }">6 Deal</span>
+
+	    			</div>
+	    			<div class="playnow-btn">
+	    				<span class="ply-btn">play now</span>
+	    			</div>
+	    		</div>
+	    	</div>
+	    </div>
+
+	                <footer>
+                <div class="footer">
+                    <div class="row">
+                        <div class="col-md-2">
+                           <div class="profile">
+                            <img src="img/lobby/user.png" style="width:60px; padding-left:20px">
+                            <br>
+                            <span style="padding-left:10px">Suraj Sasi</span>
+                            </div></div>
+                        <div class="col-md-3" id="cash">
+                            <div class="row">
+                                <div class="col">
+                                    <img src="img/lobby/rupee.png" style="width:30px"><span>54,896</span>
+                                </div>
+                                <div class="col">
+                                    <img ng-src="img/lobby/add-cash.png" style="width:80px;">
+                                </div>
+                               </div>
+                        </div>
+                        <div class="col-md-2" >
+                               <div class="bonus">
+                                Bonus
+                              <br>
+                                <div class="txt-bonus">
+                                 25467</div>
+                                </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="silver-club">
+                               <div class="row" style="margin-left:45px">
+                                Silver Club</div>
+                                <div class="row" style="margin-left:0px">
+                                <img src="img/lobby/club-silver.png" style="width:150px">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-1">
+                            <div class="notifi">
+                                <img src="img/lobby/notification-icon.png">
+                                <span class="noti-msg">2</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+    </ion-content>
+</ion-view>

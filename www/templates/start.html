@@ -1,0 +1,39 @@
+<ion-view ng-controller="AppCtrl">
+    <ion-content class="start-loading">
+    		
+    		<div class="container">
+			  <div class="frame">
+			    <img ng-src="img/loading/logo-back.png" style="width: 40%" />
+			  </div>
+			  <div class="frame">
+			    <img ng-src="img/loading/logo-front.png" style="width: 40%" />
+			  </div>
+
+			</div>
+			
+				<p class="txt-loading">Loading<span id="dots"></span></p>
+				
+    </ion-content>
+</ion-view>
+<script type="text/javascript">
+	var dots = 0;
+    
+	$(document).ready(function()
+	{
+	    setInterval (type, 600);
+	});
+
+	function type()
+	{
+	    if(dots < 3)
+	    {
+	        $('#dots').append('. ');
+	        dots++;
+	    }
+	    else
+	    {
+	        $('#dots').html('');
+	        dots = 0;
+	    }
+	}
+</script>

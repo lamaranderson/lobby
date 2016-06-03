@@ -1,0 +1,80 @@
+<ion-view>
+    <ion-content class="img-background">
+        <div class="cash-game">
+            <div class="menu-backbtn">
+                <img src="img/lobby/back.png" ng-click="back()">
+            </div>
+            <div class="menu-menubtn">
+                <img src="img/lobby/menu.png" ui-sref="main">
+            </div>
+
+            <div class="main">
+                <div class="main-cash" style="margin-left:50px">
+                    <div class="cash-top"></div>
+                    <div class="middle-cash">
+                        <div class="rummy" ng-click="pointrummy()">
+                            <img src="img/lobby/rupee-symbol.png">
+                        </div>
+                        <div class="rummy" ng-click="poolrummy()">
+                            <img src="img/lobby/cup.png">
+                        </div>
+                        <div class="rummy" ng-click="dealrummy()">
+                            <img src="img/lobby/chip.png">
+                        </div>
+                    </div>
+                    <div class="bottom-cash"></div>
+                </div>
+            </div>
+
+            <footer>
+                <div class="footer">
+                    <div class="row">
+                        <div class="col-md-2">
+                           <div class="profile">
+                            <img src="img/lobby/user.png" style="width:60px; padding-left:20px">
+                            <br>
+                            <span style="padding-left:10px">Suraj Sasi</span>
+                            </div></div>
+                        <div class="col-md-3" id="cash">
+                            <div class="row">
+                                <div class="col">
+                                    <img src="img/lobby/rupee.png" style="width:30px"><span>54,896</span>
+                                </div>
+                                <div class="col">
+                                    <img ng-src="img/lobby/add-cash.png" style="width:80px;">
+                                </div>
+                               </div>
+                        </div>
+                        <div class="col-md-2" >
+                               <div class="bonus">
+                                Bonus
+                              <br>
+                                <div class="txt-bonus">
+                                 25467</div>
+                                </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="silver-club">
+                               <div class="row" style="margin-left:45px">
+                                Silver Club</div>
+                                <div class="row" style="margin-left:0px">
+                                <img src="img/lobby/club-silver.png" style="width:150px">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-1">
+                            <div class="notifi">
+                                <img src="img/lobby/notification-icon.png">
+                                <span class="noti-msg">2</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </ion-content>
+</ion-view>
+
+rupee-symbol.png
+cup.png
+chip.png
